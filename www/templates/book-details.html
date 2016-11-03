@@ -1,0 +1,27 @@
+<!--
+ Book details
+-->
+<ion-view ng-controller="DetailsCtrl">
+    <ion-content class="padding">
+        <div class="list card">
+            <div class="item item-avatar">
+                <img ng-src="{{bookDetails.author_image}}">
+                <h2>{{bookDetails.title}}</h2>
+                <p>${{bookDetails.price}}</p>
+            </div>
+            <div class="item item-body">
+                <img class="full-image" ng-src="{{bookDetails.image}}">
+                <p>{{bookDetails.long_description}}</p>
+                <b><p style="text-align:center;">Rate it!</p></b>
+                <ionic-ratings style="font-size: 25px;" ratingsobj='ratingsObject' ng-click="addRating();ratings='';"></ionic-ratings>
+                </br>
+                <button class="button button-block button-calm" ng-click="showMore()">Show more</button>
+                <div ng-show="moreInfo">
+                    <p>Date of Release: {{bookDetails.release_date | date}}</p>
+                    <p>Indigo rating: {{bookDetails.rating}}</p>
+                    <p>{{bookDetails.short_description}}</p>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

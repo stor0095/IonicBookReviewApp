@@ -1,0 +1,15 @@
+<ion-view view-title="Non-Fiction" ng-controller="fictionCtrl">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="c in book" type="item-text-wrap">
+                <div class="list">
+                    <a class="item item-thumbnail-left" ui-sref="tab.nonfiction-detail({id: c._id})" href-active="active">
+                        <img ng-src="{{c.image}}">
+                        <h2>{{c.title}}</h2>
+                        <p>{{c.author}}</p>
+                    </a>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
